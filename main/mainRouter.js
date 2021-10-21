@@ -8,13 +8,13 @@ app.use(bodyparser.json());
 app.use(cors());
 
 const billRouter = require("../bill/index");
-
+const bookRouter = require("../bill/index");
 app.get("/",(req,res)=>{
     res.send("main get")
 })
 
 app.use("/",billRouter);
-
+app.use("/book",bookRouter)
 app.listen(1302,()=>{
     console.log("server running");
 })
